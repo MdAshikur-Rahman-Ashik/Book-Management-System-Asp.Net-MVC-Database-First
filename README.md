@@ -9,6 +9,7 @@
   <li><a href="#getting-started">Getting Started</a></li>
   <li><a href="#database-setup">Database Setup</a></li>
   <li><a href="#usage">Usage</a></li>
+  <li><a href="#screenshots">Screenshots</a></li> <!-- Added Screenshots section -->
   <li><a href="#contributing">Contributing</a></li>
   <li><a href="#license">License</a></li>
 </ul>
@@ -43,9 +44,7 @@
 <h2 id="database-setup">📂 Database Setup</h2>
 <ol>
   <li>Clone the repository:</li>
-  <pre><code>https://github.com/MdAshikur-Rahman-Ashik/Book-Management-System-Asp.Net-MVC-Database-First</code></pre>
-
-  
+  <pre><code>git clone https://github.com/MdAshikur-Rahman-Ashik/Book-Management-System-Asp.Net-MVC-Database-First.git</code></pre>
 </ol>
 
 <h2 id="usage">💻 Usage</h2>
@@ -55,6 +54,14 @@
   <li>View, update, or delete book records.</li>
   <li>Track book loans and manage availability.</li>
 </ul>
+
+<h2 id="screenshots">🖼️ Screenshots</h2> <!-- Screenshots Section -->
+<p>Here are some screenshots of the application:</p>
+<img src="assets/images/screenshot1.jpg" alt="Screenshot 1" style="max-width: 600px;" />
+<img src="assets/images/screenshot2.jpg" alt="Screenshot 2" style="max-width: 600px;" />
+<img src="assets/images/screenshot3.jpg" alt="Screenshot 3" style="max-width: 600px;" />
+<img src="assets/images/screenshot4.jpg" alt="Screenshot 4" style="max-width: 600px;" />
+<!-- Add more images as needed -->
 
 <h2 id="contributing">🤝 Contributing</h2>
 <p>Contributions are welcome! If you have suggestions for improvements or want to report issues, please create an issue or submit a pull request.</p>
