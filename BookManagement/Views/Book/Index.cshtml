@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BookManagement.Models.Book>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2 class="text-center my-4" style="font-family: 'Georgia', serif;">Book List</h2>
+
+<div class="container">
+    <div class="mb-3">
+        <a href="@Url.Action("Create", "Book")" class="btn btn-primary">Create New Book</a>
+    </div>
+
+    <table class="table table-bordered table-hover table-striped shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Book ID</th>
+                <th>Book Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(x => item.BookId)</td>
+                    <td>@Html.DisplayFor(x => item.BookName)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

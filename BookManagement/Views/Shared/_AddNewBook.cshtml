@@ -1,0 +1,16 @@
+﻿@model BookManagement.Models.Book
+
+<div>
+    <div>
+        @Html.DropDownListFor(d=>d.BookId,ViewBag.books as SelectList,"---Select Book------")
+    </div>
+    <div>
+        <a href="#" id="btnDeleteBook">Delete</a>
+    </div>
+</div>
+<script>
+    $(document).on('click', '#btnDeleteBook', function (e) {
+        e.preventDefault();
+        $(this).parent().parent().remove()
+    })
+</script>

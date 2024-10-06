@@ -1,0 +1,59 @@
+﻿@*@model BookManagement.Models.Book
+    @{
+        ViewBag.Title = "Create";
+        Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    }
+
+    <h2>Create Book</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div>
+            <h4>Book</h4>
+
+            @Html.ValidationSummary()
+            <div>
+                @Html.LabelFor(x => x.BookName)
+                @Html.EditorFor(x => x.BookName)
+                @Html.ValidationMessageFor(x => x.BookName)
+            </div>
+            <div>
+                <input type="submit" value="Create" class="btn btn-dark"/>
+            </div>
+        </div>
+    }*@
+
+@model BookManagement.Models.Book
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2 class="text-center mb-4" style="font-family: 'Georgia', serif;">Create Book</h2>
+
+<div class="container">
+    <div class="card shadow-sm border-0 rounded">
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="mb-3">
+                    <h4 class="card-title text-muted">Book Information</h4>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(x => x.BookName, null, new { @class = "form-label fw-bold" })
+                        @Html.EditorFor(x => x.BookName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter book name" } })
+                        @Html.ValidationMessageFor(x => x.BookName, null, new { @class = "text-danger" })
+                    </div>
+
+                    <div class="text-center">
+                        <input type="submit" value="Create" class="btn btn-dark w-50" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<BookManagement.Models.Customer>
+@{
+    ViewBag.Title = "Customer List";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2 class="text-center my-4" style="font-family: 'Georgia', serif;">Customer List</h2>
+
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card shadow-sm">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Customers</h4>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <a href="@Url.Action("Create", "Customer")" class="btn btn-success">Create New Customer</a>
+                </div>
+
+                @foreach (var item in Model)
+                {
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Customer Id</th>
+                                    <th>Customer Name</th>
+                                    <th>Birth Date</th>
+                                    <th>Picture</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@Html.DisplayFor(e => item.CustomerId)</td>
+                                    <td>@Html.DisplayFor(e => item.CustomerName)</td>
+                                    <td>@Html.DisplayFor(e => item.BirthDate)</td>
+                                    <td>
+                                        <img src="@item.Picture" alt="Customer Image" class="img-thumbnail" width="80" height="80" />
+                                    </td>
+                                </tr>
+                                @if (item.BookEntries != null && item.BookEntries.Any())
+                                {
+                                    <tr>
+                                        <td colspan="4">
+                                            <h5>Books Associated with Customer</h5>
+                                            <table class="table table-sm table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>BookId</th>
+                                                        <th>BookName</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item2 in item.BookEntries)
+                                                    {
+                                                        <tr>
+                                                            <td>@Html.DisplayFor(x => item2.Book.BookId)</td>
+                                                            <td>@Html.DisplayFor(x => item2.Book.BookName)</td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <div class="d-flex justify-content-end">
+                            <a href="@Url.Action("Edit", "Customer", new { id = item.CustomerId })" class="btn btn-primary me-2">Edit</a>
+                            <a href="@Url.Action("Delete", "Customer", new { id = item.CustomerId })" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

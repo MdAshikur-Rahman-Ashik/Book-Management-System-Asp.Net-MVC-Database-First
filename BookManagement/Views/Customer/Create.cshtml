@@ -1,0 +1,136 @@
+﻿@model BookManagement.Models.ViewModel.CustomerViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2 class="text-center my-4" style="font-family: 'Georgia', serif;">Create Customer</h2>
+
+@using (Html.BeginForm("Create", "Customer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="card-title mb-0">Customer Information</h4>
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+                </div>
+
+                <div class="card-body">
+                    <div class="mb-3">
+                        @Html.LabelFor(e => e.CustomerName, new { @class = "form-label" })
+                        @Html.EditorFor(e => e.CustomerName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(e => e.CustomerName, null, new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(e => e.BirthDate, new { @class = "form-label" })
+                        @Html.EditorFor(e => e.BirthDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                        @Html.ValidationMessageFor(e => e.BirthDate, null, new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(e => e.IsRegular, new { @class = "form-label" })
+                        @Html.EditorFor(e => e.IsRegular, new { htmlAttributes = new { @class = "form-check-input" } })
+                        @Html.ValidationMessageFor(e => e.IsRegular, null, new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        <img src="~/images/download1.jpeg" id="imgfile" class="img-thumbnail" width="80" height="80" />
+                        <input type="file" id="upimg" class="form-control mt-2" onchange="readUrl(this)" name="PicturePath" />
+                        <label for="upimg" class="form-label mt-1">Upload Image</label>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="mb-3">
+                        <h5>Select Book</h5>
+                    </div>
+
+                    <div class="mb-3">
+                        <a href="#" id="btnPlus" class="btn btn-secondary btn-sm">Add Book</a>
+                    </div>
+
+                    <div id="QualiContain">
+                        @Html.Action("AddNewBook", "Customer")
+                    </div>
+
+                    <div class="mt-3 text-center">
+                        <input type="submit" value="Create" class="btn btn-info" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    function readUrl(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#imgfile').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]); // Convert the image file to base64 string
+        }
+    }
+   
+</script>
+
+
+
+
+
+@*@model BookManagement.Models.ViewModel.CustomerViewModel
+    @{
+        ViewBag.Title = "Create";
+        Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    }
+
+    <h2>Create Customer</h2>
+    @using(Html.BeginForm("Create","Customer",FormMethod.Post,new { enctype = "multipart/form-data" }))
+     {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        <div>
+            <div>
+                @Html.LabelFor(e => e.CustomerName)
+                @Html.EditorFor(e => e.CustomerName)
+                @Html.ValidationMessageFor(e => e.CustomerName)
+            </div>
+            <div>
+                @Html.LabelFor(e => e.BirthDate)
+                @Html.EditorFor(e => e.BirthDate)
+                @Html.ValidationMessageFor(e => e.BirthDate)
+            </div>
+            <div>
+                @Html.LabelFor(e => e.IsRegular)
+                @Html.EditorFor(e => e.IsRegular)
+                @Html.ValidationMessageFor(e => e.IsRegular)
+            </div>
+            <div>
+                <img src="~/images/download1.jpeg" height="80" width="80" id="imgFile" />
+                <input type="file" id="upimg" class="upimg" onchange="readUrl(this)" name="PicturePath"/>
+                <label for="upimg">Upload</label>
+            </div>
+        </div>
+
+        <div>
+         <h2>Select Book</h2>
+        </div>
+
+        <div>
+         <a href="#" id="btnPlus">Add</a>
+        </div>
+
+        <div id="QualiContain">
+          @Html.Action("AddNewBook","Customer")
+        </div>
+
+        <div>
+            <input type="submit" value="Create"/>
+        </div>
+     }*@
