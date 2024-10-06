@@ -55,13 +55,7 @@
   <li>Track book loans and manage availability.</li>
 </ul>
 
-<h2 id="screenshots">🖼️ Screenshots</h2> <!-- Screenshots Section -->
-<p>Here are some screenshots of the application:</p>
-<img src="assets/images/screenshot1.jpg" alt="Screenshot 1" style="max-width: 600px;" />
-<img src="assets/images/screenshot2.jpg" alt="Screenshot 2" style="max-width: 600px;" />
-<img src="assets/images/screenshot3.jpg" alt="Screenshot 3" style="max-width: 600px;" />
-<img src="assets/images/screenshot4.jpg" alt="Screenshot 4" style="max-width: 600px;" />
-<!-- Add more images as needed -->
+
 
 <h2 id="contributing">🤝 Contributing</h2>
 <p>Contributions are welcome! If you have suggestions for improvements or want to report issues, please create an issue or submit a pull request.</p>
@@ -75,3 +69,9 @@
   <li><strong>Name:</strong> Md Ashikur Rahman Ashik</li>
   <li><strong>Email:</strong> <a href="mailto:mohammadashikidb@gmail.com">mohammadashikidb@gmail.com</a></li>
 </ul>
+
+
+![Screenshot3](https://github.com/user-attachments/assets/af60264d-cea8-48e0-8638-13e076e9d252)
+![Screenshot4](https://github.com/user-attachments/assets/b3e712c5-45da-4461-883b-702b1501285a)
+![screenshot1](https://github.com/user-attachments/assets/da230b1f-6f68-46fa-b828-78c3301739bf)
+![Screenshot2](https://github.com/user-attachments/assets/7e3dd4a3-8e08-4aae-9025-e0db133e9de7)
