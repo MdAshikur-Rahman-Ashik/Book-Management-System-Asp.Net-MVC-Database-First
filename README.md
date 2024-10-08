@@ -44,7 +44,7 @@
 <h2 id="database-setup">📂 Database Setup</h2>
 <ol>
   <li>Clone the repository:</li>
-  <pre><code>git clone https://github.com/MdAshikur-Rahman-Ashik/Book-Management-System-Asp.Net-MVC-Database-First.git</code></pre>
+  <pre><code> https://github.com/MdAshikur-Rahman-Ashik/Book-Management-System-Asp.Net-MVC-Database-First.git</code></pre>
 </ol>
 
 <h2 id="usage">💻 Usage</h2>
